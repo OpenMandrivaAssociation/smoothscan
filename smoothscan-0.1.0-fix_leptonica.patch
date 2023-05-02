@@ -1,0 +1,21 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -30,7 +30,7 @@ fi
+ # libharu
+ 
+ # Checks for libraries.
+-AC_CHECK_LIB([lept], [jbCorrelationInitWithoutComponents], [], [AC_MSG_ERROR([leptonica library not found or not usable])])
++AC_CHECK_LIB([leptonica], [jbCorrelationInitWithoutComponents], [], [AC_MSG_ERROR([leptonica library not found or not usable])])
+ AC_CHECK_LIB([hpdf], [HPDF_New], [], [AC_MSG_ERROR([libharu library not found])])
+ # Checks for header files.
+ AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
+--- a/src/smoothscan.c
++++ b/src/smoothscan.c
+@@ -34,6 +34,7 @@
+ 
+ /* 3rd party library headers */
+ #include <leptonica/allheaders.h>
++#include <leptonica/pix_internal.h>
+ #include <hpdf.h>
+ /* #include <potracelib.h> */
+ 
