@@ -6,6 +6,7 @@ License:	GPLv3+
 Group:		Office
 URL:		https://natecraun.net/projects/smoothscan/
 Source0:	https://github.com/ncraun/smoothscan/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0:		smoothscan-0.1.0-fix_leptonica.patch
 
 BuildRequires:	fontforge-python
 BuildRequires:	potrace
@@ -39,7 +40,7 @@ similar idea is used in djvu's jb2 mode and JBIG2 for PDF.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 autoreconf -fiv
